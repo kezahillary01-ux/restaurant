@@ -1,0 +1,17 @@
+const express = require("express");
+const reservRouter = express.Router();
+
+const addReservation = require("../controllers/reservation/addReservation.js");
+const getAllReservation = require("../controllers/reservation/getAllReservation.js");
+const getReservationById = require("../controllers/reservation/getByNameReservation.js");
+const deleteReservation = require("../controllers/reservation/deteleReservation.js");
+const updateReservation = require("../controllers/reservation/updateReservation.js")
+
+
+reservRouter.post("/reservation/add", addReservation);
+reservRouter.get("/reservation/getall", getAllReservation);
+reservRouter.get("/reservation/getone", getReservationById);
+reservRouter.delete("reservation/delete/:id", deleteReservation );
+reservRouter.patch("/reservation/update/:id", updateReservation)
+
+module.exports = reservRouter
